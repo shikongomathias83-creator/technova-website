@@ -1,138 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>TechNova Solutions</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0a0f1f;
-            color: white;
-            scroll-behavior: smooth;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechNova Solutions</title>
 
-        header {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(90deg, #0f172a, #1e3a8a);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        header h1 {
-            font-size: 48px;
-            color: #38bdf8;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        header p {
-            font-size: 20px;
-            color: #f97316;
-        }
+body {
+    background: #0a0f1f;
+    color: white;
+    scroll-behavior: smooth;
+}
 
-        .btn {
-            padding: 12px 25px;
-            background: #f97316;
-            border: none;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            font-size: 16px;
-        }
+header {
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
 
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
+header h1 {
+    font-size: 60px;
+    background: linear-gradient(90deg,#38bdf8,#f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
+header p {
+    margin-top: 20px;
+    font-size: 22px;
+    opacity: 0.8;
+}
 
-        .card {
-            background: #111827;
-            padding: 25px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
+.btn {
+    margin-top: 30px;
+    padding: 15px 35px;
+    background: #f97316;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .card:hover {
-            transform: translateY(-10px);
-            background: #1e293b;
-        }
+.btn:hover {
+    background: #ea580c;
+    transform: scale(1.05);
+}
 
-        footer {
-            background: #020617;
-            padding: 20px;
-            text-align: center;
-        }
+section {
+    padding: 100px 10%;
+}
 
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            font-size: 20px;
-            text-decoration: none;
-        }
-    </style>
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 40px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    background: rgba(255,255,255,0.1);
+}
+
+.poster-section {
+    text-align: center;
+}
+
+.poster-section img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.7);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    background: #1e293b;
+    color: white;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background: #f97316;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #020617;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    padding: 18px;
+    border-radius: 50%;
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+}
+</style>
 </head>
 
 <body>
 
 <header>
     <h1>TechNova Solutions</h1>
-    <p>Code • Design • Create • Install</p>
-    <a href="#contact"><button class="btn">Get Started</button></a>
+    <p>Premium Digital & IT Solutions Agency</p>
+    <a href="#services"><button class="btn">Explore Services</button></a>
 </header>
 
-<section>
-    <h2>Our Services</h2>
+<section id="services">
+    <h2 class="section-title">Our Expertise</h2>
     <div class="services">
         <div class="card">
             <h3>App & Web Development</h3>
-            <p>Modern websites and mobile apps built for performance.</p>
+            <p>High-performance websites and mobile apps designed to scale.</p>
         </div>
         <div class="card">
-            <h3>UI/UX & Graphic Design</h3>
-            <p>Creative designs that attract and convert customers.</p>
+            <h3>UI/UX & Branding</h3>
+            <p>Stunning digital experiences that convert visitors into clients.</p>
         </div>
         <div class="card">
             <h3>Software Installation</h3>
-            <p>Professional installation and configuration services.</p>
+            <p>Complete system setup for businesses and individuals.</p>
         </div>
         <div class="card">
-            <h3>Database Management</h3>
-            <p>Secure and scalable database solutions.</p>
+            <h3>Cloud & Database Solutions</h3>
+            <p>Secure infrastructure and data management systems.</p>
         </div>
         <div class="card">
             <h3>Printing Services</h3>
-            <p>High-quality and fast printing for businesses.</p>
+            <p>Professional document and marketing material printing.</p>
         </div>
         <div class="card">
             <h3>IT Support & Security</h3>
-            <p>Remote support and system protection.</p>
+            <p>Reliable remote support and cybersecurity protection.</p>
         </div>
     </div>
 </section>
 
+<section class="poster-section">
+    <h2 class="section-title">Our Services Overview</h2>
+    <img src="c:\Users\tjava\Desktop\poster.png" alt="Company Poster">
+</section>
+
 <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: tjavangaromeo002@email.com</p>
-    <p>Phone: 0812275888</p>
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-form">
+        <form action="https://formsubmit.co/tjavangaromeo002@email.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 TechNova Solutions | All Rights Reserved</p>
+    <p>© 2026 TechNova Solutions. All Rights Reserved.</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/1234567890" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/0812275888" target="_blank">💬</a>
 
 </body>
 </html>
