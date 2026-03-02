@@ -3,15 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechNova Solutions</title>
+<title>TechNova Solutions | Digital Agency</title>
+
+<!-- SEO -->
+<meta name="description" content="TechNova Solutions offers professional web development, app development, IT support, and printing services.">
+<meta name="keywords" content="Web Development, App Development, IT Support, Printing Services, Software Installation">
+<meta name="author" content="TechNova Solutions">
+
+<!-- Social Share -->
+<meta property="og:title" content="TechNova Solutions - Premium Digital Agency">
+<meta property="og:description" content="Professional Web, App & IT Solutions.">
+<meta property="og:image" content="poster.png">
+<meta property="og:type" content="website">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
 
-<!-- Google Font -->
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -28,6 +37,32 @@ body {
     scroll-behavior: smooth;
 }
 
+/* NAVIGATION */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #f97316;
+}
+
+/* HEADER */
 header {
     height: 100vh;
     background: linear-gradient(135deg, #0f172a, #1e3a8a);
@@ -58,15 +93,8 @@ header p {
     background: #f97316;
     border: none;
     color: white;
-    font-size: 16px;
     border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #ea580c;
-    transform: scale(1.05);
 }
 
 section {
@@ -79,7 +107,8 @@ section {
     font-size: 40px;
 }
 
-.services {
+/* SERVICES */
+.services, .testimonials {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
@@ -91,23 +120,25 @@ section {
     border-radius: 20px;
     backdrop-filter: blur(10px);
     transition: 0.4s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card:hover {
-    transform: translateY(-15px);
-    background: rgba(255,255,255,0.1);
-}
-
-.poster-section {
-    text-align: center;
+    transform: translateY(-10px);
 }
 
 .poster-section img {
     max-width: 100%;
     border-radius: 20px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.7);
 }
 
+/* CONTACT */
 .contact-form {
     max-width: 600px;
     margin: auto;
@@ -155,6 +186,16 @@ footer {
 
 <body>
 
+<nav>
+    <div><strong>TechNova</strong></div>
+    <div>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
 <header>
     <h1>TechNova Solutions</h1>
     <p>Premium Digital & IT Solutions Agency</p>
@@ -164,42 +205,33 @@ footer {
 <section id="services">
     <h2 class="section-title">Our Expertise</h2>
     <div class="services">
-        <div class="card">
-            <h3>App & Web Development</h3>
-            <p>High-performance websites and mobile apps designed to scale.</p>
-        </div>
-        <div class="card">
-            <h3>UI/UX & Branding</h3>
-            <p>Stunning digital experiences that convert visitors into clients.</p>
-        </div>
-        <div class="card">
-            <h3>Software Installation</h3>
-            <p>Complete system setup for businesses and individuals.</p>
-        </div>
-        <div class="card">
-            <h3>Cloud & Database Solutions</h3>
-            <p>Secure infrastructure and data management systems.</p>
-        </div>
-        <div class="card">
-            <h3>Printing Services</h3>
-            <p>Professional document and marketing material printing.</p>
-        </div>
-        <div class="card">
-            <h3>IT Support & Security</h3>
-            <p>Reliable remote support and cybersecurity protection.</p>
-        </div>
+        <div class="card"><h3>Web Development</h3><p>Modern scalable websites.</p></div>
+        <div class="card"><h3>App Development</h3><p>Android & cross-platform apps.</p></div>
+        <div class="card"><h3>IT Support</h3><p>Professional system solutions.</p></div>
+        <div class="card"><h3>Printing Services</h3><p>Fast reliable printing.</p></div>
     </div>
 </section>
 
 <section class="poster-section">
-    <h2 class="section-title">Our Services Overview</h2>
+    <h2 class="section-title">Agency Overview</h2>
     <img src="poster.png" alt="Company Poster">
+</section>
+
+<section id="testimonials">
+    <h2 class="section-title">What Clients Say</h2>
+    <div class="testimonials">
+        <div class="card"><p>"TechNova built our website in 5 days. Incredible work."</p><strong>- Sarah M.</strong></div>
+        <div class="card"><p>"Professional IT support and quick response time."</p><strong>- James K.</strong></div>
+        <div class="card"><p>"Our mobile app runs flawlessly. Highly recommend."</p><strong>- Daniel T.</strong></div>
+        <div class="card"><p>"Best tech service company we have worked with."</p><strong>- Amanda R.</strong></div>
+    </div>
 </section>
 
 <section id="contact">
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-form">
         <form action="https://formsubmit.co/tjavangaromeo002@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
@@ -212,8 +244,20 @@ footer {
     <p>© 2026 TechNova Solutions. All Rights Reserved.</p>
 </footer>
 
-<!-- WhatsApp (South Africa formatted) -->
 <a class="whatsapp" href="https://wa.me/27812275888" target="_blank">💬</a>
+
+<script>
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (cardTop < windowHeight - 100) {
+            card.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
